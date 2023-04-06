@@ -22,10 +22,17 @@ public class Api {
     private final UserService userService;
     private final AuthService authService;
 
-    @PostMapping("/register")
-    @PermitAll
+    @PostMapping("/register/student")
+    @PreAuthorize("hasAnyAuthority('MANAGER')")
     public ResponseEntity<String> create(@RequestBody UserRequest userRequest) {
-        userService.create(userRequest);
+        userService.createStudent(userRequest);
+        return ResponseEntity.ok().body("user with name:" + userRequest.getName() + " successfully save");
+    }
+
+    @PostMapping("/register/manager")
+    @PreAuthorize("hasAnyAuthority('MANAGER')")
+    public ResponseEntity<String> createManager(@RequestBody UserRequest userRequest) {
+        userService.createManager(userRequest);
         return ResponseEntity.ok().body("user with name:" + userRequest.getName() + " successfully save");
     }
 
@@ -35,15 +42,21 @@ public class Api {
         return authService.authenticate(requestBody);
     }
 
-    @GetMapping("/getUser")
-    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+    @GetMapping("/getStudent")
+    @PreAuthorize("hasAnyAuthority('STUDENT')")
     public String getString() {
-        return "I'm User";
+        return "STUDENT";
     }
 
-    @GetMapping("/getAdmin")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @GetMapping("/getManager")
+    @PreAuthorize("hasAnyAuthority('MANAGER')")
     public String getAdmin() {
-        return "I'm Admin";
+        return "MANAGER";
+    }
+
+    @GetMapping("/getTeacher")
+    @PreAuthorize("hasAnyAuthority('MANAGER')")
+    public String getTeacher() {
+        return "TEACHER";
     }
 }

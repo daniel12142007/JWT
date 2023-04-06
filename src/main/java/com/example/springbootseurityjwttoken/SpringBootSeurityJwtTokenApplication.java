@@ -7,8 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 
@@ -33,7 +31,7 @@ public class SpringBootSeurityJwtTokenApplication {
         User user1 = new User();
         user1.setFirst_name( "Marlen" );
         user1.setEmail( "marlen@gmail.com" );
-        user1.setRole( Role.USER );
+        user1.setRole( Role.MANAGER);
         user1.setPassword( pasl.encode( "marlen" ) );
 
         userRepository.save( user1 );

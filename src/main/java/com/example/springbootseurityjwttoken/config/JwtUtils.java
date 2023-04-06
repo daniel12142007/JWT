@@ -16,7 +16,6 @@ public class JwtUtils {
 
     public String generateToken(Authentication authentication) {
         User authInfo = (User) authentication.getPrincipal();
-
         return Jwts.builder()
                 .setSubject(authInfo.getEmail())
                 .signWith(SignatureAlgorithm.HS256, jwtConfig.getSecretKey())
