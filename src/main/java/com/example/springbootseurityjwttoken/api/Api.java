@@ -1,18 +1,12 @@
 package com.example.springbootseurityjwttoken.api;
 
-import com.example.springbootseurityjwttoken.dto.auth.AuthRequest;
-import com.example.springbootseurityjwttoken.dto.auth.AuthResponse;
+import com.example.springbootseurityjwttoken.dto.auth.*;
 import com.example.springbootseurityjwttoken.dto.request.UserRequest;
-import com.example.springbootseurityjwttoken.service.AuthService;
-import com.example.springbootseurityjwttoken.service.UserService;
-import lombok.Getter;
+import com.example.springbootseurityjwttoken.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.PermitAll;
 

@@ -1,11 +1,9 @@
 package com.example.springbootseurityjwttoken.service;
 
 import com.example.springbootseurityjwttoken.config.JwtUtils;
-import com.example.springbootseurityjwttoken.dto.auth.AuthRequest;
-import com.example.springbootseurityjwttoken.dto.auth.AuthResponse;
+import com.example.springbootseurityjwttoken.dto.auth.*;
 import lombok.AllArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 

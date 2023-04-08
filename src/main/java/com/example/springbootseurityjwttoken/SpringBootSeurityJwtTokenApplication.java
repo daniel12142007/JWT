@@ -1,7 +1,6 @@
 package com.example.springbootseurityjwttoken;
 
-import com.example.springbootseurityjwttoken.model.Role;
-import com.example.springbootseurityjwttoken.model.User;
+import com.example.springbootseurityjwttoken.model.*;
 import com.example.springbootseurityjwttoken.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;

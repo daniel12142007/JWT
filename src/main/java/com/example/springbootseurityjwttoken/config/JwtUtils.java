@@ -1,8 +1,7 @@
 package com.example.springbootseurityjwttoken.config;
 
 import com.example.springbootseurityjwttoken.model.User;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
